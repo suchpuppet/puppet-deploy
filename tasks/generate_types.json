@@ -6,6 +6,9 @@
   "parameters": {
     "environment": {
       "type": "String"
+    },
+    "verbose": {
+      "type": "Optional[Boolean]"
     }
   }
 }
