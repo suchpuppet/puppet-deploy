@@ -8,6 +8,7 @@ plan deploy::r10k (
   TargetSpec $nodes,
   Boolean $catch_errors = true,
   String $environment = undef,
+  Boolean $verbose = false,
 ) {
   $targets = get_targets($nodes)
 
@@ -17,6 +18,7 @@ plan deploy::r10k (
     'deploy::r10k',
     $targets,
     environment => $environment,
+    verbose => $verbose,
     '_catch_errors' => $catch_errors
   )
 
@@ -24,6 +26,7 @@ plan deploy::r10k (
     'deploy::cache',
     $targets,
     environment => $environment,
+    verbose => $verbose,
     '_catch_errors' => $catch_errors
   )
 
@@ -31,6 +34,7 @@ plan deploy::r10k (
     'deploy::generate_types',
     $targets,
     environment => $environment,
+    verbose => $verbose,
     '_catch_errors' => $catch_errors
   )
 
