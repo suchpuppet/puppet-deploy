@@ -17,7 +17,7 @@ plan deploy::r10k (
     'deploy::r10k',
     $targets,
     '_run_as' => 'root',
-    'environment' => $environment,
+    environment => $environment,
     '_catch_errors' => $catch_errors
   )
 
@@ -25,7 +25,7 @@ plan deploy::r10k (
     'deploy::cache',
     $targets,
     '_run_as' => 'root',
-    'environment' => $environment,
+    environment => $environment,
     '_catch_errors' => $catch_errors
   )
 
@@ -33,7 +33,7 @@ plan deploy::r10k (
     'deploy::generate_types',
     $targets,
     '_run_as' => 'root',
-    'environment' => $environment,
+    environment => $environment,
     '_catch_errors' => $catch_errors
   )
 
