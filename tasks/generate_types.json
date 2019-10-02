@@ -2,6 +2,7 @@
   "puppet_task_version": 1,
   "supports_noop": false,
   "description": "Runs puppet generate types for the specified environment",
+  "input_method": "stdin",
   "parameters": {
     "environment": {
       "type": "String"
