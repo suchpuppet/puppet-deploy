@@ -1,0 +1,11 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Clears environment cache",
+  "parameters": {
+    "environment": {
+      "type": "String",
+      "description": "The environment to clear cache for"
+    }
+  }
+}
