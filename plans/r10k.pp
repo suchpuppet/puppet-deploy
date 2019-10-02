@@ -26,7 +26,6 @@ plan deploy::r10k (
     'deploy::cache',
     $targets,
     environment => $environment,
-    verbose => $verbose,
     '_catch_errors' => $catch_errors
   )
 
