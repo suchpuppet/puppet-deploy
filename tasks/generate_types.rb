@@ -9,7 +9,7 @@ def generate_types(environment)
   cmd = ['/opt/puppetlabs/puppet/bin/puppet', 'generate', 'types' '--environment', "#{environment}"]
 
   stdout, stderr, status = Open3.capture3(*cmd) # rubocop:disable Lint/UselessAssignment
-  raise Puppet::Error, _("stderr: ' %{stderr}') % { stderr: stderr }") if status != 0
+  raise Puppet::Error, stderr if status != 0
   { status: stdout.strip }
 end
 
