@@ -1,0 +1,14 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Deploys R10k environment",
+  "input_method": "stdin",
+  "parameters": {
+    "environment": {
+      "type": "String"
+    },
+    "verbose": {
+      "type": "Optional[Boolean]"
+    }
+  }
+}
