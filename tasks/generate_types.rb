@@ -9,8 +9,12 @@ def generate_types(environment)
   cmd = ['/opt/puppetlabs/puppet/bin/puppet', 'generate', 'types', '--environment', "#{environment}"]
 
   stdout, stderr, status = Open3.capture3(*cmd) # rubocop:disable Lint/UselessAssignment
-  raise Puppet::Error, stderr.strip if status != 0
-  { status: stdout.strip }
+  raise Puppet::Error, stderr.strip.gsub(/\e\[([;\d]+)?m/, '') if status != 0
+  if stdout.strip.nil? || stdout.strip == ""
+    { status: "success" }
+  else
+    { status: stdout.strip.gsub(/\e\[([;\d]+)?m/, '') }
+  end
 end
 
 params = JSON.parse(STDIN.read)
