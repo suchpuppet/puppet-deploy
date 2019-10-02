@@ -12,7 +12,7 @@ def r10k(environment, verbose)
   end
   cmd = ['/usr/bin/r10k', 'deploy', 'environment', "#{environment}", "#{flags}"]
   stdout, stderr, status = Open3.capture3(*cmd) # rubocop:disable Lint/UselessAssignment
-  raise Puppet::Error, _("stderr: ' %{stderr}') % { stderr: stderr }") if status != 0
+  raise Puppet::Error, stderr.strip if status != 0
   if stdout.strip.nil? || stdout.strip == ""
     { status: "deployed environment #{environment}"}
   else
