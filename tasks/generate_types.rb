@@ -6,7 +6,7 @@ require 'puppet'
 # Puppet Task Name: generate_types
 
 def generate_types(environment)
-  cmd = ['/opt/puppetlabs/puppet/bin/puppet', 'generate', 'types' '--environment', "#{environment}"]
+  cmd = ['/opt/puppetlabs/puppet/bin/puppet', 'generate', 'types', '--environment', "#{environment}"]
 
   stdout, stderr, status = Open3.capture3(*cmd) # rubocop:disable Lint/UselessAssignment
   raise Puppet::Error, stderr.strip if status != 0
