@@ -40,7 +40,9 @@ plan deploy::r10k (
   $r10k.each |$result| {
     $node = $result.target.name
     if $result.ok {
-      notice("${node} deployed environment ${environment} successfully")
+      if $verbose == true {
+        notice("${node} deployed environment ${environment} successfully")
+      }
     } else {
       fail_plan("${node} errored with a message: ${result.error.message}")
     }
@@ -49,7 +51,9 @@ plan deploy::r10k (
   $cache.each |$result| {
     $node = $result.target.name
     if $result.ok {
-      notice("${node} cleared environment cache for environment ${environment}")
+      if $verbose == true {
+        notice("${node} cleared environment cache for environment ${environment}")
+      }
     } else {
       fail_plan("${node} could not clear environment cache: ${result.error.message}")
     }
@@ -58,7 +62,9 @@ plan deploy::r10k (
   $types.each |$result| {
     $node = $result.target.name
     if $result.ok {
-      notice("${node} generated types successfully")
+      if $verbose == true {
+        notice("${node} generated types successfully")
+      }
     } else {
       fail_plain("${node} could not generate types: ${result.error.message}")
     }

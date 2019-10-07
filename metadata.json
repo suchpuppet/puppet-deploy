@@ -1,10 +1,12 @@
 {
   "name": "suchpuppet-deploy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Scott Brimhall",
-  "summary": "",
+  "summary": "Module containing tasks and a plan for deploying a puppet environment with R10k",
   "license": "MIT",
-  "source": "",
+  "source": "https://github.com/suchpuppet/puppet-deploy.git",
+  "project_page": "https://github.com/suchpuppet/puppet-deploy.git",
+  "issues_url": "https://github.com/suchpuppet/puppet-deploy/issues",
   "dependencies": [
 
   ],
